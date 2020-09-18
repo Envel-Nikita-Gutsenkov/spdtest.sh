@@ -398,10 +398,6 @@ EOF
 
 #? End variables -------------------------------------------------------------------------------------------------------------------->
 
-if [[ -z $ookla_speedtest ]]; then ookla_speedtest="speedtest"; fi
-if [[ ! $($ookla_speedtest -V | head -n1) =~ "Speedtest by Ookla" ]]; then
-	echo "ERROR: Ookla speedtest client not found!"; exit 1
-fi
 if ! command -v python3 >/dev/null 2>&1; then echo "ERROR: Python 3 not found!"; exit 1; fi
 
 if [[ $mtr == "true" ]] && ! command -v mtr >/dev/null 2>&1; then mtr="false"; fi
